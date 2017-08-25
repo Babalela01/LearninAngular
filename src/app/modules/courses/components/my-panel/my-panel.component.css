@@ -1,0 +1,11 @@
+div.panel {
+  border: dotted black 2px;
+  background-color: antiquewhite;
+  width: 50em;
+}
+
+div.panel-heading {
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}

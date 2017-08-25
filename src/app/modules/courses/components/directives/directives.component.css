@@ -1,0 +1,7 @@
+.active {
+  background-color: cornflowerblue;
+}
+
+#courseList :nth-child(odd) {
+  color: red;
+}

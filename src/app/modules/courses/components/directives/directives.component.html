@@ -1,0 +1,62 @@
+<h2>Directives</h2>
+
+<h3>Ng-If Approach</h3>
+<div *ngIf="courses?.length > 0" >
+  List of courses <br>
+  .....
+</div>
+<div *ngIf="courses?.length == 0">
+  No courses to display
+</div>
+
+<h3>ng-if Template variables and ng-for</h3>
+<!--Alternate with content inside first div: *ngIf="courses.length > 0; else noCourses -->
+<!--Leading asterisk - angular will rewrite using ng-templates. Structural directives-->
+<div *ngIf="courses?.length > 0; then coursesList else noCourses"></div>
+
+<!--https://angular.io/api/common/NgForOf  for more exported values -->
+<button (click)="loadCourses()">Load Courses</button>
+<button (click)="addCourse()">Add Course</button>
+<button (click)="removeCourse()">Remove Course</button>
+<ng-template #coursesList>
+  List of courses
+  <ol id="courseList" [ngClass]="{
+    'many' : courses?.length > 2
+  }">
+    <!--Problem: Entire list reconstructed everytime: Video ngFor and Trackby. Different obj in memory on reload.
+     Use Chrome debugging tools to see DOM changes -->
+    <!--<li *ngFor="let course of courses">{{course.name}}</li>-->
+    <li *ngFor="let course of courses; trackBy: trackCourse">{{course.name}}</li>
+  </ol>
+</ng-template>
+<ng-template #noCourses>
+  No courses to display
+</ng-template>
+
+<!--Diff between hidden and if: If add/removes component tree, hidden just show/hides it-->
+<h3>Hidden attribute</h3>
+<div [hidden]="hidden">Hidden False</div>
+<div [hidden]="!hidden">Hidden True</div>
+
+<h3>Switch Case</h3>
+<ul class="">
+  <li [class.active]="viewMode == 'map'"><a (click)="viewMode='map'">Map View</a></li>
+  <li [class.active]="viewMode == 'list'"><a (click)="viewMode='list'">List View</a></li>
+</ul>
+<div [ngSwitch]="viewMode">
+  <!--I wonder... what if you use ng-template in here?-->
+  <div *ngSwitchCase="'map'">
+    Map view Content
+  </div>
+  <div *ngSwitchCase="'list'">
+    List view content
+  </div>
+  <div *ngSwitchDefault>
+    Alternate
+  </div>
+</div>
+
+<button [ngStyle]="{
+  'backgroundColor': canSave ? 'blue' : 'gray',
+  'color': canSave ? 'white' : 'black'
+}">Save</button>

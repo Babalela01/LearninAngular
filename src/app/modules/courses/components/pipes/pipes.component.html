@@ -1,0 +1,16 @@
+<p>
+  {{course.title | uppercase | lowercase }} <br>
+  {{course.students | number }} <br>
+  {{course.rating | number:'1.2-2'}} <br> <!-- Min 2 max 2 -->
+  {{course.price | currency:'USD':true }} <br>
+  {{course.price | currency:'USD':false }} <br>
+  {{course.price | currency:'ZAR':true:'4.2-2' }} <br>
+  {{course.price | currency:'ZAR':false }} <br>
+  {{course.releaseDate | date:'yyyy-MM-dd' }} <br>
+  {{course.releaseDate | date:'shortDate' }}
+</p>
+
+<h5>Summary Pipe</h5>
+<p>{{longText | summary:10}}</p>
+<p>{{longText}}</p>
+

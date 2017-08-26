@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  background-color: gray;
+  margin: 2em;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.hidden  {
+  display:none;
+}
+
+

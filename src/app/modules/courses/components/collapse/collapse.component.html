@@ -1,0 +1,6 @@
+<div class="title" (click)="toggleBody()">
+  {{title}}
+</div>
+<div class="body" [class.hidden]="hidden">
+  <ng-content></ng-content>
+</div>

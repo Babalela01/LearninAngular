@@ -1,6 +1,9 @@
-div.panel {
+:host {
+  /*Setting the display property is VERY important when using the :host selector - out of the box your browser will
+  not know how to display a tag like 'my-panel' */
+  display: block;
   border: dotted black 2px;
-  background-color: antiquewhite;
+  background-color: yellow;
   width: 50em;
 }
 

@@ -1,0 +1,43 @@
+<hr>
+<form [formGroup]="form">
+  <p>Form builder</p>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      [formControl]="name"
+      id="name"
+      type="text"
+      class="form-control">
+    <span *ngIf="username.pending">Checking availability...</span>
+  </div>
+
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input
+      [formControl]="username"
+      id="username"
+      type="text"
+      class="form-control">
+    <span *ngIf="username.pending">Checking availability...</span>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      [formControl]="password"
+      id="password"
+      type="password"
+      class="form-control">
+  </div>
+
+
+  <div>
+    Interests:
+    <input type="text" (keyup.enter)="addInterest($event)">
+    <ul>
+      <li *ngFor="let topic of interests.controls; let i = index" (click)="removeInterest(i)">{{topic.value}}</li>
+    </ul>
+  </div>
+
+</form>
+<hr>

@@ -1,0 +1,37 @@
+<form #form="ngForm" (ngSubmit)="submit(form)">
+  <!--ngModel and name combination creates implicit form control. Angular uses html5 input attributes for validation-->
+  <div ngModelGroup="name">    <!--Can also use validation properties of model group or form-->
+
+    <label>First name: <input required minlength="3" maxlength="20"
+                              id="first-name" placeholder="first name" #firstNameModel="ngModel"
+                              ngModel name="firstName" (change)="log(firstNameModel)"></label>
+    <div *ngIf="firstNameModel.touched && !firstNameModel.valid">
+      <span *ngIf="firstNameModel.errors.required">First name required</span>
+      <span *ngIf="firstNameModel.errors.minlength">First name shorter than {{firstNameModel.errors.minlength.requiredLength}} characters</span>
+      <span *ngIf="firstNameModel.errors.maxlength">First name too long</span>
+    </div>
+    <label>Last name: <input required minlength="3" maxlength="20" id="last-name" placeholder="last name"
+                             name="lastName" ngModel></label>
+  </div>
+  <label>Subscribe <input type="checkbox" id="check" ngModel name="subscribe"></label>
+  <label>Comments: <textarea ngModel name="comment" id="comment"></textarea></label>
+
+  <label>Contact Method
+    <select name="method" ngModel id="method" required>
+      <!--Ideally use ng-for and populate from server-->
+      <!--To use an object as value use ngValue -->
+      <option value="1" selected>Email</option>
+      <option value="2">Telephone</option>
+    </select>
+  </label>
+
+  <div class="radio">
+    <label>Email <input type="radio" ngModel name="contactMethod2" value="email"></label>
+    <label>Phone <input type="radio" ngModel name="contactMethod2" value="phone"></label>
+  </div>
+
+  <p>
+    {{form.value | json}}
+  </p>
+  <input type="submit" [disabled]="form.invalid">
+</form>

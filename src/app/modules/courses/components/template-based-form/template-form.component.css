@@ -1,0 +1,11 @@
+label {
+  display: block;
+}
+
+.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+input:invalid {
+  background: rgba(255, 0, 0, 0.5);
+}

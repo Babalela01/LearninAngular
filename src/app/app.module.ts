@@ -1,8 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from "@angular/platform-browser";
+import {NgModule} from "@angular/core";
 
-import { AppComponent } from './app.component';
-import {CoursesModule} from './modules/courses/courses.module';
+import {AppComponent} from "./app.component";
+import {CoursesModule} from "./modules/courses/courses.module";
+import {PostsModule} from "./modules/posts/posts.module";
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import {CoursesModule} from './modules/courses/courses.module';
   ],
   imports: [
     BrowserModule,
-    CoursesModule
+    CoursesModule,
+    PostsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

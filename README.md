@@ -1,3 +1,11 @@
+# Useful links
+
+Promises: https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html
+
+Custom two-way binding: https://blog.thoughtram.io/angular/2016/10/13/two-way-data-binding-in-angular-2.html
+
+Observables and promises: https://stackoverflow.com/questions/37364973/angular-promise-vs-observable 
+
 # HelloWorld
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.

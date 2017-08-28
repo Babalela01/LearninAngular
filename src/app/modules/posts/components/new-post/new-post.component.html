@@ -1,0 +1,6 @@
+<form (ngSubmit)="submit(form)" #form="ngForm">
+  <input placeholder="title" ngModel name="title"> <br>
+  <input type="hidden" value="1" ngModel name="userId">
+  <textarea placeholder="body" ngModel name="body"></textarea> <br>
+  <input type="submit">
+</form>

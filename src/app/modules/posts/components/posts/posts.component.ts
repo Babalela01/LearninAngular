@@ -1,7 +1,8 @@
 import {Component, OnInit} from "@angular/core";
 import {Post} from "../../model/post";
 import {PostsService} from "../../services/posts/posts.service";
-import {GeneralError} from "../../model/post-error";
+import {GeneralError} from "../../model/errors";
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class PostsComponent implements OnInit {
   posts: Post[];
   errorReason;
 
-  constructor(private postsService: PostsService) {
+  constructor(private postsService: PostsService, private route: ActivatedRoute) {
   }
 
   setPosts(posts) {
@@ -24,6 +25,8 @@ export class PostsComponent implements OnInit {
 
   //Lifecycle hooks. Do some research
   ngOnInit() {
+    console.log(this.route.snapshot.queryParamMap.get('page'));
+
     this.postsService
       .getAllAsPromise()
       .then((postResponse: Post[]) => this.setPosts(postResponse))
@@ -33,8 +36,8 @@ export class PostsComponent implements OnInit {
         });
   }
 
-  appendPost(post: Post) {
-    this.posts.push(post);
+  showNewPost(post: Post) {
+    this.posts.splice(0,0, post);
   }
 
 }

@@ -1,6 +1,6 @@
 <div *ngIf="errorReason">ERROR: {{errorReason}}</div>
 
-<app-new-post (postAdded)="appendPost($event)"></app-new-post>
-<div>
-  <app-post *ngFor="let post of posts" [post]="post"></app-post>
-</div>
+<app-new-post (postAdded)="showNewPost($event)"></app-new-post>
+<ol>
+  <li *ngFor="let post of posts"><a [routerLink]="['/posts', post.id]">{{post.title}}</a></li>
+</ol>

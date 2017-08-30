@@ -1,16 +1,16 @@
-import {BrowserModule} from "@angular/platform-browser";
-import {NgModule} from "@angular/core";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
-import {AppComponent} from "./app.component";
-import {CoursesModule} from "./modules/courses/courses.module";
-import {PostsModule} from "./modules/posts/posts.module";
-import {NavbarComponent} from "./components/navbar/navbar.component";
-import {NotFoundComponent} from "./components/not-found/not-found.component";
-import {RouterModule} from "@angular/router";
-import {HomeComponent} from "./components/home/home.component";
-import {PostsComponent} from "./modules/posts/components/posts/posts.component";
-import {SinglePostComponent} from "./modules/posts/components/single-post/single-post.component";
-import {CoursesComponent} from "./modules/courses/components/courses/courses.component";
+import { CoursesModule } from './modules/courses/courses.module';
+import { MyFormsModule } from './modules/my-forms/my-forms.module';
+import { PostsModule } from './modules/posts/posts.module';
+
+import { AppComponent } from './components/app-root/app.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AppRouterModule } from './routes/app.routes';
 
 @NgModule({
   declarations: [
@@ -23,13 +23,9 @@ import {CoursesComponent} from "./modules/courses/components/courses/courses.com
     BrowserModule,
     CoursesModule,
     PostsModule,
-    RouterModule.forRoot([ //Probably declare this in a separate file and import it here
-      {path: 'posts/:id', component: SinglePostComponent}, //Order important
-      {path: 'posts', component: PostsComponent},
-      {path: 'courses', component: CoursesComponent},
-      {path: '', component: HomeComponent},
-      {path: '**', component: NotFoundComponent} //Order important
-    ])
+    MyFormsModule,
+    RouterModule,
+    AppRouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

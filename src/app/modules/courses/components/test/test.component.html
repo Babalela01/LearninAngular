@@ -1,19 +1,25 @@
+<h3>Events</h3>
 <div class="post">
-  <favorite [is-favorite]="post.isFavorite" (change)="onFavouriteChanged($event)"></favorite> <span class="title">{{post.title}}</span>
+  <favorite [is-favorite]="post.isFavorite" (change)="onFavouriteChanged($event)"></favorite>
+  <span class="title">{{post.title}}</span>
 </div>
 <!-- Could use any HTML element instead of ng-container. ng-container just means the content gets inlined.  -->
-<div>
+<h3>ngContent</h3>
 <my-panel>
   <ng-container class="heading">
-      Panel Heading
+    Panel Heading
   </ng-container>
   <ng-container class="body">
-    Panel Body ... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Panel Body ... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+    laborum.
   </ng-container>
 </my-panel>
-</div>
 
-<app-directives></app-directives>
-<app-template-form></app-template-form>
-<app-reactive-form></app-reactive-form>
-<app-form-builder></app-form-builder>
+<br>
+
+<app-collapse title="Title">
+  My Component
+</app-collapse>

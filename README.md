@@ -6,6 +6,8 @@ Custom two-way binding: https://blog.thoughtram.io/angular/2016/10/13/two-way-da
 
 Observables and promises: https://stackoverflow.com/questions/37364973/angular-promise-vs-observable 
 
+Child routes: https://angular-2-training-book.rangle.io/handout/routing/child_routes.html
+
 # HelloWorld
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.

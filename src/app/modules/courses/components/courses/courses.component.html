@@ -1,39 +1,8 @@
-<h2>{{title}}</h2>
-<p>You can also bind with textcontent (a DOM object property): <span [textContent]="title"></span> </p>
+<h2>Courses Stuff</h2>
 <ul>
-  <li *ngFor="let course of courses">
-    {{course}}
-  </li>
+  <li routerLinkActive="active"><a routerLink="basics">Basics</a></li>
+  <li routerLinkActive="active"><a routerLink="pipes">Pipes</a></li>
+  <li routerLinkActive="active"><a routerLink="test">ngContent and Events</a></li>
+  <li routerLinkActive="active"><a routerLink="directives">Directives</a></li>
 </ul>
-
-<h3>String Interpolation</h3>
-<img src="{{imageUrl}}"/>
-
-<h3>Property Binding</h3>
-<img [src]="imageUrl"/>
-
-<table>
-  <tr>
-    <!-- Cannot bind to colspan with just [colspan] - "Not a known property of td"
-     Reason: Colspan is an attribute that does not have a property on the DOM object
-     Solution: Use attr.colspan in binding
-     -->
-    <td [attr.colspan]="colSpan"></td>
-  </tr>
-</table>
-<div (click)="onDivClicked()">
-<button [class.active]="isActive" [style.color]="textColor" (click)="toggle($event)">Click</button>
-</div>
-
-<!-- # = template variable -->
-<input #myVar (keyup.enter)="onKeyUp(myVar.value)" />
-<input [(ngModel)]="email"> {{email}}
-
-<div>
-  <h3>Pipes</h3>
-  <courses-pipes></courses-pipes>
-</div>
-<div>
-  <h3>Test</h3>
-  <courses-test></courses-test>
-</div>
+<router-outlet></router-outlet>

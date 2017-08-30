@@ -28,7 +28,7 @@ export class NewPostComponent {
         return post;
       })
       // .then((post) => { //To programattically navigate
-      //   this.router.navigate(['/posts', post.id], {
+      //   this.router.navigate(['/app.modules.posts', post.id], {
       //     queryParams: {'q': 1}
       //   })
       // });

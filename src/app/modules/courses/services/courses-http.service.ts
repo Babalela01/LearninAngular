@@ -1,5 +1,5 @@
 
-//Need @Injectable only if service also has dependencies that need to be injected.
+// Need @Injectable only if service also has dependencies that need to be injected.
 export class CoursesHttpService {
 
   getCourses() {

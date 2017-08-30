@@ -5,12 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './template-form.component.html',
   styleUrls: ['./template-form.component.css']
 })
-export class TemplateBasedFormComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+export class TemplateBasedFormComponent {
 
   log(element) {
     console.log(element)
@@ -20,5 +15,4 @@ export class TemplateBasedFormComponent implements OnInit {
     console.log(form.value)
     //Submit form.value to server.
   }
-
 }

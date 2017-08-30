@@ -1,6 +1,6 @@
 import {LOCALE_ID, NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormsModule} from "@angular/forms";
 import {CoursesComponent} from "./components/courses/courses.component";
 import {CoursesHttpService} from "./services/courses-http.service";
 import {TestComponent} from "./components/test/test.component";
@@ -11,15 +11,14 @@ import {MyPanelComponent} from "./components/my-panel/my-panel.component";
 import {DirectivesComponent} from "./components/directives/directives.component";
 import {InputFormatDirective} from "./directives/input-format.directive";
 import {CollapseComponent} from "./components/collapse/collapse.component";
-import {TemplateBasedFormComponent} from "./components/template-based-form/template-form.component";
-import {ReactiveFormComponent} from "./components/reactive-form/reactive-form.component";
-import {FormBuilderComponent} from "./components/form-builder/form-builder.component";
+import {BasicsComponent} from "./components/basics/basics.component";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule
+    RouterModule,
+    FormsModule
   ],
   declarations: [
     CoursesComponent,
@@ -31,9 +30,7 @@ import {FormBuilderComponent} from "./components/form-builder/form-builder.compo
     DirectivesComponent,
     InputFormatDirective,
     CollapseComponent,
-    TemplateBasedFormComponent,
-    ReactiveFormComponent,
-    FormBuilderComponent
+    BasicsComponent
   ],
   exports: [
     CoursesComponent

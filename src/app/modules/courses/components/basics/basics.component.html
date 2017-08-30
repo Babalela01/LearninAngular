@@ -1,0 +1,38 @@
+<h3>{{title}}</h3>
+<p>You can also bind with [textcontent] (a DOM object property): <span [textContent]="title"></span></p>
+<ul>
+  <li *ngFor="let course of courses">
+    {{course}}
+  </li>
+</ul>
+
+<table border="1">
+  <tr>
+    <!-- Cannot bind to colspan with just [colspan] - "Not a known property of td"
+     Reason: Colspan is an attribute that does not have a property on the DOM object
+     Solution: Use attr.colspan in binding
+     -->
+    <td [attr.colspan]="colSpan">span</td>
+  </tr>
+  <tr>
+    <td>a</td>
+    <td>b</td>
+  </tr>
+</table>
+<br>
+<div (click)="onDivClicked()">
+  <button [class.active]="isActive" [style.color]="textColor" (click)="toggle($event)">Click Events</button>
+</div>
+
+<h3>NgModel and Template variables</h3>
+<!-- # = template variable -->
+<input #myVar (keyup.enter)="onKeyUp(myVar.value)"/> <br>
+<input [(ngModel)]="email"> {{email}}
+
+
+<h3>String Interpolation</h3>
+<img src="{{imageUrl}}" />
+
+<h3>Property Binding</h3>
+<img [src]="imageUrl" />
+

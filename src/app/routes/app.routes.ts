@@ -9,6 +9,7 @@ import { COURSES_ROUTES } from '../modules/courses/routes/courses.routes';
 import { MyFormsRouter } from '../modules/my-forms/router/my-forms.routes';
 import { PostsComponent } from '../modules/posts/components/posts/posts.component';
 import { SinglePostComponent } from '../modules/posts/components/single-post/single-post.component';
+import { AuthRouter } from '../modules/auth/routing/auth.routes';
 
 const APP_ROUTES: Routes = [ // Probably declare this in a separate file and import it here
   {
@@ -42,6 +43,7 @@ const APP_ROUTES: Routes = [ // Probably declare this in a separate file and imp
 @NgModule({
   imports: [
     MyFormsRouter, // This imports and merges the other routing config
+    AuthRouter,
     RouterModule.forRoot(APP_ROUTES)
   ]
 })

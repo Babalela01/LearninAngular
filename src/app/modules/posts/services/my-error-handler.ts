@@ -4,5 +4,6 @@ export class MyErrorHandler implements ErrorHandler{
 
   handleError(error: any): void {
     alert(error.message)
+    console.log(error)
   }
 }

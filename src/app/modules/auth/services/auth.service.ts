@@ -3,11 +3,16 @@ import { Http } from '@angular/http';
 import { JwtHelper, tokenNotExpired } from 'angular2-jwt';
 import 'rxjs/add/operator/map';
 
+interface AuthToken {
+  name: string,
+  roles: string[]
+}
+
 @Injectable()
 export class AuthService {
 
-  private TOKEN_KEY = 'token';
-  private AUTH_URL = '/api/authenticate';
+  private readonly TOKEN_KEY = 'token';
+  private readonly AUTH_URL = '/api/authenticate';
 
   private jwtHelper = new JwtHelper();
 
@@ -31,7 +36,7 @@ export class AuthService {
   }
 
   isLoggedIn() {
-   /* let token = this.getToken();
+  /*  let token = this.getToken();
 
     if (!token) {
       return false;
@@ -44,13 +49,34 @@ export class AuthService {
 
   }
 
-  private getToken() {
+  public getToken(): string {
     return localStorage.getItem(this.TOKEN_KEY);
   }
 
   getUsername() {
-    let token = this.getToken();
-    return this.jwtHelper.decodeToken(token).name;
+    if (this.isLoggedIn()) {
+      let token = this.getToken();
+      return this.decodeToken(token).name;
+    }
+    return null;
+  }
+
+  private decodeToken(token: string): AuthToken {
+    return this.jwtHelper.decodeToken(token);
+  }
+
+  /**
+   * Returns true if the user is logged in and has the specified role
+   * @param role
+   * @return {boolean}
+   */
+  hasRole(role: string) {
+    if (this.isLoggedIn()) {
+      let token = this.getToken();
+      let roles: string[] = this.decodeToken(token).roles;
+      return roles.indexOf(role) > -1
+    }
+    return false;
   }
 }
 

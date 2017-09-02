@@ -16,6 +16,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { fakeBackendProvider } from './helpers/fake-backend';
 import { AuthService } from './services/auth.service';
 import { OrderService } from './services/order.service';
+import { AuthGuard } from './guards/auth.guard';
+import { AdminGuard } from './guards/admin.guard';
 // import { AUTH_PROVIDERS, AuthConfig, AuthHttp, provideAuth } from 'angular2-jwt/angular2-jwt';
 
 @NgModule({
@@ -37,6 +39,8 @@ import { OrderService } from './services/order.service';
   providers: [
     OrderService,
     AuthService,
+    AuthGuard,
+    AdminGuard,
 
     // For creating a mock back-end. You don't need these in a real app.
     fakeBackendProvider,

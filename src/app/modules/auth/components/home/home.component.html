@@ -1,9 +1,14 @@
 <h1>Home Page</h1>
-<p>
-  Welcome [NAME]
-</p>
+
+<p *ngIf="authService.isLoggedIn(); then loggedIn else notLoggedIn"></p>
+<ng-template #loggedIn>
+  Welcome {{authService.getUsername()}}
+</ng-template>
+<ng-template #notLoggedIn>
+  Please login
+</ng-template>
 <ul>
-  <li *ngIf=""><a routerLink="admin">Admin</a></li>
+  <li *ngIf="authService.hasRole('admin')"><a routerLink="admin">Admin</a></li>
   <li *ngIf="!authService.isLoggedIn()"><a routerLink="login">Login</a></li>
-  <li *ngIf=""><a (click)="authService.logout()" routerLink="/auth">Logout</a></li>
+  <li *ngIf="authService.isLoggedIn()"><a (click)="authService.logout()" routerLink="/auth">Logout</a></li>
 </ul>

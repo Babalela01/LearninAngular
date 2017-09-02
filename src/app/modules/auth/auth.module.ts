@@ -18,7 +18,7 @@ import { AuthService } from './services/auth.service';
 import { OrderService } from './services/order.service';
 import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
-// import { AUTH_PROVIDERS, AuthConfig, AuthHttp, provideAuth } from 'angular2-jwt/angular2-jwt';
+import { AUTH_PROVIDERS, AuthConfig, AuthHttp, provideAuth } from 'angular2-jwt/angular2-jwt';
 
 @NgModule({
   declarations: [
@@ -41,6 +41,7 @@ import { AdminGuard } from './guards/admin.guard';
     AuthService,
     AuthGuard,
     AdminGuard,
+    AuthHttp,
 
     // For creating a mock back-end. You don't need these in a real app.
     fakeBackendProvider,
@@ -49,5 +50,5 @@ import { AdminGuard } from './guards/admin.guard';
   ],
   exports: [AuthComponent]
 })
-export class AuthDemoModule {
+export class MyAuthModule {
 }

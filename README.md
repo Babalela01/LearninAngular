@@ -8,6 +8,14 @@ Observables and promises: https://stackoverflow.com/questions/37364973/angular-p
 
 Child routes: https://angular-2-training-book.rangle.io/handout/routing/child_routes.html
 
+ng build: https://github.com/angular/angular-cli/wiki/build
+
+Angular Material: https://material.angular.io/
+
+# TODO
+
+Look into lazy loading
+
 # HelloWorld
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.

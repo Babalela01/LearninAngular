@@ -32,7 +32,7 @@ export class BasicsComponent {
     console.log("Div click ", $event)
   }
 
-  onKeyUp(text: String) {
+  onKeyUp(text: string) {
     //traditional: If ($event.keycode = ....)
     console.log('Pressed Enter ', text);
   }

@@ -34,7 +34,7 @@ export function fakeBackendFactory(backend: MockBackend,
             })));
         } else {
           connection.mockRespond(new Response(
-            new ResponseOptions({status: 200, body: {success: false}})
+            new ResponseOptions({status: 401, body: {success: false}})
           ));
         }
       }

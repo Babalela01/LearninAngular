@@ -20,8 +20,13 @@
   </tr>
 </table>
 <br>
-<div (click)="onDivClicked()">
-  <button [class.active]="isActive" [style.color]="textColor" (click)="toggle($event)">Click Events</button>
+<div (click)="onDivClicked($event)">
+  <button
+    [class.active]="isActive"
+    [style.color]="textColor"
+    (click)="toggle($event)">
+    Click Events
+  </button>
 </div>
 
 <h3>NgModel and Template variables</h3>

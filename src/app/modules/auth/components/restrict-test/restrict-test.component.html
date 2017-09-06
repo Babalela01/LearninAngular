@@ -1,0 +1,10 @@
+<app-restrict-view componentName="SomeComponentName">
+  Some restricted content
+</app-restrict-view>
+<!--Alternative: With components with multiple versions (view/edit) have multiple container with selectors-->
+
+<app-signup *appRestrict></app-signup>
+
+<app-signup *appRestrict="'someName'"></app-signup>
+
+<app-signup appRestrict2 example="Maybe Use This for Excludes?"></app-signup>

@@ -19,6 +19,10 @@ import { OrderService } from './services/order.service';
 import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
 import { AUTH_PROVIDERS, AuthConfig, AuthHttp, provideAuth } from 'angular2-jwt/angular2-jwt';
+import { RestrictViewComponent } from './components/restrict-view/restrict-view.component';
+import { RestrictTestComponent } from './components/restrict-test/restrict-test.component';
+import { RestrictDirective } from './directives/restrict.directive';
+import { Restrict2Directive } from "./directives/restrict2.directive";
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { AUTH_PROVIDERS, AuthConfig, AuthHttp, provideAuth } from 'angular2-jwt/
     AdminComponent,
     HomeComponent,
     NotFoundComponent,
-    NoAccessComponent
+    NoAccessComponent,
+    RestrictViewComponent,
+    RestrictTestComponent,
+    RestrictDirective,
+    Restrict2Directive,
   ],
   imports: [
     BrowserModule,

@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  otherProperty : 'Some test property'
+  otherProperty : 'Some test property...'
 };

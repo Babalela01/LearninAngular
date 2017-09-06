@@ -8,6 +8,7 @@ import { LoginComponent } from '../components/login/login.component';
 import { NoAccessComponent } from '../components/no-access/no-access.component';
 import { AuthGuard } from '../guards/auth.guard';
 import { AdminGuard } from '../guards/admin.guard';
+import { RestrictTestComponent } from '../components/restrict-test/restrict-test.component';
 
 export const AuthRouter: ModuleWithProviders = RouterModule.forChild([{
   path: 'auth',
@@ -29,6 +30,10 @@ export const AuthRouter: ModuleWithProviders = RouterModule.forChild([{
     {
       path: 'no-access',
       component: NoAccessComponent
+    },
+    {
+      path: 'restrict',
+      component: RestrictTestComponent
     }
   ]
 }]);

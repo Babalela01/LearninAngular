@@ -6,6 +6,7 @@
     <label>First name: <input required minlength="3" maxlength="20"
                               id="first-name" placeholder="first name" #firstNameModel="ngModel"
                               ngModel name="firstName" (change)="log(firstNameModel)"></label>
+
     <div *ngIf="firstNameModel.touched && !firstNameModel.valid">
       <span *ngIf="firstNameModel.errors.required">First name required</span>
       <span *ngIf="firstNameModel.errors.minlength">First name shorter than {{firstNameModel.errors.minlength.requiredLength}} characters</span>

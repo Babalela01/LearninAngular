@@ -24,7 +24,7 @@ export class BasicsComponent {
     //$event is the standard  DOM event object
     this.isActive = !this.isActive;
     console.log("Event logged ", $event);
-    //$event.stopPropagation(); //Std JS - prevent bubbling up of events
+    $event.stopPropagation(); //Std JS - prevent bubbling up of events
   }
 
   onDivClicked($event) {

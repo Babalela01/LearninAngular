@@ -10,5 +10,6 @@
 <ul>
   <li *ngIf="authService.hasRole('admin')"><a routerLink="admin">Admin</a></li>
   <li *ngIf="!authService.isLoggedIn()"><a routerLink="login">Login</a></li>
+  <li *ngIf="authService.isLoggedIn()"><a routerLink="restrict">Restrictions Test</a></li>
   <li *ngIf="authService.isLoggedIn()"><a (click)="authService.logout()" routerLink="/auth">Logout</a></li>
 </ul>

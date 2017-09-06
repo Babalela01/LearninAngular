@@ -2,7 +2,7 @@ import {Directive, ElementRef, HostListener, Input} from "@angular/core";
 
 @Directive({
   selector: '[appInputFormat]'
-//  [blah] Any element that has this attribute
+//  [blah] Any elementName that has this attribute
   // Codign stantdards -- that
 })
 export class InputFormatDirective {
@@ -38,7 +38,7 @@ export class InputFormatDirective {
     else
       throw new Error(`Unknown format ${this.format}`)
 
-  //  Alternative: value.toLowercase() value.toUppercase()
+  //  Alternative: value.toLowercase(), value.toUppercase()
   }
 
 

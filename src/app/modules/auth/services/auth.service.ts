@@ -78,5 +78,10 @@ export class AuthService {
     }
     return false;
   }
+
+  canView(component: string) {
+    console.log('Checking view for ' + component);
+    return this.hasRole('admin');
+  }
 }
 

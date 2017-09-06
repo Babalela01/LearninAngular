@@ -12,9 +12,15 @@ ng build: https://github.com/angular/angular-cli/wiki/build
 
 Angular Material: https://material.angular.io/
 
-# TODO
+Structural Directives: https://angular.io/guide/structural-directives 
 
-Look into lazy loading
+Component lifecycles https://angular.io/guide/lifecycle-hooks
+
+# To Read
+
+* Lazy loading
+* 
+* Custom directives
 
 # HelloWorld
 

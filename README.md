@@ -20,6 +20,10 @@ Angular Cheat sheet: https://angular.io/guide/cheatsheet
 
 Lazy loading: https://angular-2-training-book.rangle.io/handout/modules/lazy-loading-module.html
 
+JWT (JSON Web Tokens)
+* https://jwt.io/
+* https://stackoverflow.com/questions/39294049/angular2-jwt-no-provider-for-authconfig
+
 # HelloWorld
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.

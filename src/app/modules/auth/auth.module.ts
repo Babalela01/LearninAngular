@@ -50,7 +50,9 @@ import { Restrict2Directive } from "./directives/restrict2.directive";
     AuthGuard,
     AdminGuard,
     AuthHttp,
-
+    provideAuth({
+      tokenGetter: (() => localStorage.getItem('token')),
+    }),
     // For creating a mock back-end. You don't need these in a real app.
     fakeBackendProvider,
     MockBackend,

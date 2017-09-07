@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { JwtHelper, tokenNotExpired } from 'angular2-jwt';
+import { AuthConfigConsts, JwtHelper, tokenNotExpired } from 'angular2-jwt';
 import 'rxjs/add/operator/map';
 
 interface AuthToken {
@@ -11,7 +11,7 @@ interface AuthToken {
 @Injectable()
 export class AuthService {
 
-  private readonly TOKEN_KEY = 'token';
+  private readonly TOKEN_KEY = AuthConfigConsts.DEFAULT_TOKEN_NAME;
   private readonly AUTH_URL = '/api/authenticate';
 
   private jwtHelper = new JwtHelper();
@@ -50,6 +50,7 @@ export class AuthService {
   }
 
   public getToken(): string {
+
     return localStorage.getItem(this.TOKEN_KEY);
   }
 

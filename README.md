@@ -16,11 +16,9 @@ Structural Directives: https://angular.io/guide/structural-directives
 
 Component lifecycles https://angular.io/guide/lifecycle-hooks
 
-# To Read
+Angular Cheat sheet: https://angular.io/guide/cheatsheet
 
-* Lazy loading
-* 
-* Custom directives
+Lazy loading: https://angular-2-training-book.rangle.io/handout/modules/lazy-loading-module.html
 
 # HelloWorld
 

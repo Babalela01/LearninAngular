@@ -1,0 +1,16 @@
+$color : purple;
+
+@mixin myMixin($border-color) {
+  margin: auto 2em;
+  border: 2px solid $border-color;
+  border-radius: 0.5em;
+}
+
+h1 {
+  color: $color;
+  @include  myMixin(black);
+}
+
+h2 {
+  @include  myMixin($color);
+}

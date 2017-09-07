@@ -14,7 +14,7 @@ Angular Material: https://material.angular.io/
 
 Structural Directives: https://angular.io/guide/structural-directives 
 
-Component lifecycles https://angular.io/guide/lifecycle-hooks
+Component lifecycles: https://angular.io/guide/lifecycle-hooks
 
 Angular Cheat sheet: https://angular.io/guide/cheatsheet
 
@@ -23,6 +23,13 @@ Lazy loading: https://angular-2-training-book.rangle.io/handout/modules/lazy-loa
 JWT (JSON Web Tokens)
 * https://jwt.io/
 * https://stackoverflow.com/questions/39294049/angular2-jwt-no-provider-for-authconfig
+
+Sass (CSS Preprocessor): http://sass-lang.com/guide
+
+Redux
+* https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367
+* http://redux.js.org/
+* https://medium.com/beautiful-angular/angular-2-with-redux-using-ngrx-store-2f93a8ad0dd
 
 # HelloWorld
 

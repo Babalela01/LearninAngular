@@ -34,6 +34,7 @@ import {RouterModule} from "@angular/router";
   ],
   exports: [
     CoursesComponent
+  //  Exports can be anything - components, directives, services, other modules etc.
   ],
   providers: [
     CoursesHttpService,

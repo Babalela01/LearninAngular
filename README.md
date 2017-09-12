@@ -31,6 +31,11 @@ Redux
 * http://redux.js.org/
 * https://medium.com/beautiful-angular/angular-2-with-redux-using-ngrx-store-2f93a8ad0dd
 
+#Notes
+
+For testing to work properly some environment variables need to be set:
+* CHROME_BIN - Google Chrome executable
+
 # HelloWorld
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.

@@ -6,6 +6,21 @@ import { AuthService } from '../services/auth.service';
 })
 export class RestrictDirective implements OnChanges {
 
+  @Input('appRestrict') private componentName: string;
+
+  constructor(private templateRef: TemplateRef<any>,
+              private container: ViewContainerRef,
+              private authService: AuthService) {
+  }
+
+  private get elementName() {
+    return this.element.nodeName;
+  }
+
+  private get element() {
+    return this.templateRef.elementRef.nativeElement.nextElementSibling;
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
     console.log("Inside restrict");
 
@@ -15,16 +30,6 @@ export class RestrictDirective implements OnChanges {
     } else {
       this.container.createEmbeddedView(this.templateRef)
     }
-  }
-
-  @Input('appRestrict') private componentName: string;
-
-  private get elementName() {
-    return this.templateRef.elementRef.nativeElement.nextElementSibling.nodeName;
-  }
-
-  constructor(private templateRef: TemplateRef<any>, private container: ViewContainerRef, private authService: AuthService) {
-
   }
 
 }
